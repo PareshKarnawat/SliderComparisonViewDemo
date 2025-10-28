@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        
+        SliderComparisonView(
+            lhs: {
+                Image("BWNature")
+                    .resizable()
+            },
+            rhs: {
+                Image("Nature")
+                    .resizable()
+            }
+        )
+        .indicatorImage(Image(systemName: "arrow.down.left.and.arrow.up.right"))
+        .indicatorColor(.white)
+        .indicatorImageColor(.black)
+        .dividerColor(.white)
+        .dividerWidth(2)
+        .initialProgress(0.3)
     }
 }
 
